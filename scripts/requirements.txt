@@ -1,0 +1,2 @@
+# Only needed when regenerating resume.html. The website has no runtime dependencies.
+markdown-it-py==3.0.0
