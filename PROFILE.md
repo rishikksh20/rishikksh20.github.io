@@ -1,4 +1,4 @@
-# Rishikesh Kumar
+# Rishikesh
 
 **AI Research Engineer · Voice AI, LLMs & Agentic Systems · Co-founder & CTO**
 
