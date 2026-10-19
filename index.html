@@ -7,7 +7,7 @@
 <title>Rishikesh — AI Research Engineer</title>
 <meta content="Rishikesh — AI research engineer and co-founder of Dubpro.ai. Open-source deep learning, voice AI, efficient language models and intelligent agents." name="description"/>
 <meta content="Rishikesh" name="author"/>
-<meta content="#faf9f6" name="theme-color"/>
+<meta content="#efede7" name="theme-color"/>
 <meta content="light" name="color-scheme"/>
 <meta content="website" property="og:type"/>
 <meta content="Rishikesh — AI Research Engineer" property="og:title"/>
@@ -19,25 +19,26 @@
 <style>
     :root {
       color-scheme: light;
-      --paper: #faf9f6;
-      --surface: #fffefd;
-      --ink: #302d3b;
-      --muted: #6e6979;
+      --paper: #efede7;
+      --surface: #f8f6f1;
+      --ink: #272332;
+      --body: #393341;
+      --muted: #4d4557;
       --plum: #292735;
-      --violet: #73539b;
-      --lavender: #eee8f5;
-      --rose: #a55772;
-      --blush: #f7e9ed;
-      --sage: #476c59;
-      --leaf: #e8efe7;
-      --line: #e2dee7;
+      --violet: #5e3d83;
+      --lavender: #e2d8ed;
+      --rose: #8c3c59;
+      --blush: #eddce3;
+      --sage: #365843;
+      --leaf: #dce6da;
+      --line: #d0cbc3;
       --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 32px; }
     body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.75 var(--font); -webkit-font-smoothing: antialiased; }
-    body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; background-image: radial-gradient(#a99cb52b .7px, transparent .7px); background-size: 20px 20px; }
+    body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; background-image: radial-gradient(#8e857826 .7px, transparent .7px); background-size: 20px 20px; }
     ::selection { background: #dfd1ef; color: var(--plum); }
     h1, h2, h3, p, figure { margin: 0; }
     a { color: inherit; text-decoration: none; text-underline-offset: 4px; transition: color .18s, background .18s, border-color .18s, transform .18s; }
@@ -47,40 +48,56 @@
     .skip-link { position: fixed; top: -80px; left: 16px; z-index: 100; background: var(--lavender); color: var(--plum); padding: 10px 18px; border-radius: 6px; }
     .skip-link:focus { top: 12px; }
     .page-layout { display: grid; grid-template-columns: 244px minmax(0, 1fr); gap: 60px; width: min(1320px, calc(100% - 80px)); margin: 0 auto; align-items: start; }
-    .profile-panel { position: sticky; top: 24px; min-width: 0; max-height: calc(100vh - 48px); margin: 24px 0; padding: 26px 24px 24px; border: 1px solid #494252; border-radius: 16px; background: var(--plum); color: #f7f3fc; overflow-x: hidden; overflow-y: auto; scrollbar-width: thin; scrollbar-color: #65556f transparent; }
-    .profile-panel::before { content: ""; position: absolute; top: -80px; right: -105px; width: 250px; height: 250px; border: 1px solid #d1b9ee20; border-radius: 50%; box-shadow: 0 0 0 30px #d1b9ee08, 0 0 0 60px #d1b9ee05; pointer-events: none; }
-    .profile-system { display: flex; align-items: center; justify-content: space-between; font: 10px/1.6 var(--mono); color: #c5b6d8; letter-spacing: .08em; margin-bottom: 34px; }
-    .system-flower { width: 18px; height: 18px; color: #dcc4ec; }
+    .profile-panel {
+      --sidebar-bg: #272822;
+      --sidebar-ink: #f8f8f2;
+      --sidebar-muted: #c4c4b5;
+      --sidebar-line: #49483e;
+      --sidebar-green: #a6e22e;
+      --sidebar-pink: #f92672;
+      --sidebar-pink-light: #ff79a8;
+      --sidebar-cyan: #66d9ef;
+      position: sticky; top: 24px; min-width: 0; max-height: calc(100vh - 48px); margin: 24px 0; padding: 26px 24px 24px; border: 1px solid var(--sidebar-line); border-radius: 16px; background: var(--sidebar-bg); color: var(--sidebar-ink); overflow-x: hidden; overflow-y: auto; scrollbar-width: thin; scrollbar-color: #75715e transparent;
+    }
+    .profile-panel::selection, .profile-panel ::selection { background: var(--sidebar-pink); color: #171813; }
+    .profile-panel::before { content: ""; position: absolute; top: -80px; right: -105px; width: 250px; height: 250px; border: 1px solid #f926721a; border-radius: 50%; box-shadow: 0 0 0 30px #f9267208, 0 0 0 60px #f9267205; pointer-events: none; }
+    .profile-system { display: flex; align-items: center; justify-content: space-between; font: 10px/1.6 var(--mono); color: var(--sidebar-cyan); letter-spacing: .08em; margin-bottom: 34px; }
+    .system-flower { width: 18px; height: 18px; color: var(--sidebar-pink); }
     .profile-home { position: relative; display: flex; flex-direction: column; align-items: start; width: fit-content; }
-    .profile-home:hover { color: #e1c8f7; }
-    .portrait { display: grid; place-items: center; position: relative; background: #eae1f2; border: 3px solid #6b5c7c; border-radius: 16px; width: 76px; height: 76px; overflow: hidden; margin-bottom: 19px; }
-    .portrait > span { position: absolute; color: var(--violet); font: 30px var(--mono); }
+    .profile-home:hover { color: var(--sidebar-cyan); }
+    .portrait { display: grid; place-items: center; position: relative; background: #3e3d32; border: 3px solid #75715e; border-radius: 16px; width: 76px; height: 76px; overflow: hidden; margin-bottom: 19px; }
+    .portrait > span { position: absolute; color: var(--sidebar-pink-light); font: 30px var(--mono); }
     .portrait img { position: relative; width: 100%; height: 100%; object-fit: cover; }
     .profile-name { font-size: 29px; letter-spacing: -1.2px; font-weight: 650; line-height: 1.3; }
-    .name-dot { color: #d5b4e8; }
-    .profile-role { font-size: 13px; color: #d0c8dc; line-height: 1.75; margin-top: 12px; }
-    .profile-location { display: flex; align-items: center; gap: 8px; font: 10px/1.8 var(--mono); color: #bdb6cb; margin-top: 15px; }
-    .profile-location::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #abc8ae; box-shadow: 0 0 0 4px #abc8ae12; flex: 0 0 auto; }
-    .navigation { display: flex; flex-direction: column; gap: 4px; margin-top: 29px; border-top: 1px solid #ffffff15; padding-top: 22px; }
-    .navigation a { display: flex; align-items: center; gap: 11px; font-size: 12px; color: #c8c0d4; padding: 8px 10px; margin-inline: -10px; border: 1px solid transparent; border-radius: 6px; }
-    .nav-index { font: 9px var(--mono); color: #9e8fb3; }
-    .navigation a:hover, .navigation a[aria-current="location"] { color: #f3e7ff; background: #c7a7e515; border-color: #c7a7e51f; }
-    .navigation a[aria-current="location"]::after { content: "↗"; margin-left: auto; color: #d6b8ee; font-size: 13px; }
-    .profile-panel a:focus-visible { outline-color: #d6b8ee; }
+    .name-dot { color: var(--sidebar-pink); }
+    .profile-role { font-size: 13px; color: var(--sidebar-ink); line-height: 1.75; margin-top: 12px; }
+    .profile-location { display: flex; align-items: center; gap: 8px; font: 10px/1.8 var(--mono); color: var(--sidebar-muted); margin-top: 15px; }
+    .profile-location::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--sidebar-green); box-shadow: 0 0 0 4px #a6e22e18; flex: 0 0 auto; }
+    .navigation { display: flex; flex-direction: column; gap: 4px; margin-top: 29px; border-top: 1px solid var(--sidebar-line); padding-top: 22px; }
+    .navigation a { display: flex; align-items: center; gap: 11px; font-size: 14px; font-weight: 700; color: var(--sidebar-ink); padding: 9px 10px; margin-inline: -10px; border: 1px solid transparent; border-radius: 6px; }
+    .navigation a[aria-current="location"] { color: var(--sidebar-pink-light); background: #f926721a; border-color: #f9267266; }
+    .navigation a:hover { color: var(--sidebar-ink); background: #3e3d32; border-color: #75715e; }
+    .navigation a[aria-current="location"]::after { content: "↗"; margin-left: auto; color: var(--sidebar-pink-light); font-size: 13px; }
+    .profile-panel a:focus-visible { outline-color: var(--sidebar-pink); }
     .profile-links { margin-top: 26px; }
-    .cv-button { display: flex; justify-content: space-between; align-items: center; background: #eee5f5; color: var(--plum); border: 1px solid #eee5f5; border-radius: 6px; padding: 10px 13px; font-size: 12px; font-weight: 600; }
-    .cv-button:hover { color: var(--plum); background: #dfcbea; border-color: #dfcbea; transform: translateY(-2px); }
-    .social-links { display: flex; justify-content: space-between; gap: 12px; margin-top: 20px; font: 10px/1.8 var(--mono); color: #c8c0d4; }
-    .profile-links a:not(.cv-button):hover { color: #ead6fa; }
-    .download-link { display: block; font-size: 10px; color: #bdb4cc; margin-top: 15px; }
-    .profile-footnote { margin-top: 26px; padding-top: 17px; border-top: 1px solid #ffffff15; font: 9px/1.9 var(--mono); color: #b4a8c5; }
-    .profile-footnote span { display: block; color: #d4cadf; }
+    .cv-button { display: flex; justify-content: space-between; align-items: center; background: var(--sidebar-green); color: var(--sidebar-bg); border: 1px solid var(--sidebar-green); border-radius: 6px; padding: 10px 13px; font-size: 12px; font-weight: 600; }
+    .cv-button:hover { color: var(--sidebar-bg); background: #e6db74; border-color: #e6db74; transform: translateY(-2px); }
+    .social-links { display: flex; justify-content: space-between; gap: 12px; margin-top: 20px; font: 10px/1.8 var(--mono); color: var(--sidebar-cyan); }
+    .profile-links a:not(.cv-button):hover { color: var(--sidebar-pink-light); }
+    .download-link { display: block; font-size: 10px; color: var(--sidebar-muted); margin-top: 15px; }
+    .profile-footnote { margin-top: 26px; padding-top: 17px; border-top: 1px solid var(--sidebar-line); font: 9px/1.9 var(--mono); color: var(--sidebar-muted); }
+    .profile-footnote span { display: block; color: var(--sidebar-ink); }
     .main-column { min-width: 0; padding-top: 31px; }
     .intro { position: relative; padding-bottom: 35px; border-bottom: 1px solid var(--line); }
     .intro-bar { display: flex; align-items: center; justify-content: space-between; gap: 18px; font: 10px/1.7 var(--mono); color: var(--muted); padding-bottom: 18px; border-bottom: 1px solid var(--line); }
     .intro-bar > span:first-child { color: var(--violet); }
-    .intro-bar > span:last-child { display: flex; align-items: center; gap: 7px; }
+    .intro-tools { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+    .intro-actions { display: flex; align-items: center; gap: 8px; }
+    .intro-status { display: flex; align-items: center; gap: 7px; }
     .intro-bar i { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
+    .top-link { display: inline-flex; align-items: center; gap: 7px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); font: 600 12px/1.6 var(--font); white-space: nowrap; }
+    .top-link svg { width: 16px; height: 16px; flex-shrink: 0; }
+    .top-link:hover { color: var(--violet); background: var(--lavender); border-color: #b39acb; }
     .intro-stage { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 36px; align-items: start; padding-top: 38px; }
     .eyebrow { display: flex; align-items: center; gap: 9px; font: 10px/1.7 var(--mono); color: var(--violet); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 17px; }
     .eyebrow::before { content: ""; width: 23px; height: 1px; background: currentColor; }
@@ -89,12 +106,12 @@
     h1 .sage { color: var(--sage); }
     h1 .rose { color: var(--rose); }
     .intro-bio { margin-top: 24px; max-width: 70ch; }
-    .intro-description { font-size: 18px; font-weight: 400; line-height: 1.8; color: #403b48; }
+    .intro-description { font-size: 18px; font-weight: 400; line-height: 1.8; color: var(--body); }
     .intro-description + .intro-description { margin-top: 16px; }
     .intro-description strong { font-weight: 650; color: var(--ink); }
-    .intro-context { font-size: 14px; font-weight: 500; line-height: 1.9; color: #504757; margin-top: 27px; padding-top: 20px; border-top: 1px solid var(--line); }
+    .intro-context { font-size: 14px; font-weight: 500; line-height: 1.9; color: var(--body); margin-top: 27px; padding-top: 20px; border-top: 1px solid var(--line); }
     .intro-context strong { font-weight: 650; color: var(--ink); }
-    .intro-context a { color: #563a75; font-weight: 650; text-decoration: underline; text-decoration-color: #baa9ce; }
+    .intro-context a { color: var(--violet); font-weight: 650; text-decoration: underline; text-decoration-color: #a18ab7; }
     .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 25px; }
     .primary-link { display: inline-flex; align-items: center; gap: 16px; background: var(--plum); color: #fff; padding: 10px 16px; border: 1px solid var(--plum); border-radius: 6px; font-size: 12px; font-weight: 550; }
     .primary-link:hover { color: #fff; background: var(--violet); border-color: var(--violet); transform: translateY(-2px); }
@@ -112,90 +129,91 @@
     .snapshot { font: 9px/1.8 var(--mono); color: var(--muted); margin-top: 15px; }
     .section { padding: 38px 0; border-bottom: 1px solid var(--line); }
     .section-heading { margin-bottom: 23px; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 18px; }
-    .section-heading h2 { display: flex; align-items: baseline; gap: 12px; font-size: 22px; font-weight: 600; letter-spacing: -.7px; line-height: 1.4; }
-    .section-index { font: 10px/1 var(--mono); letter-spacing: 0; color: var(--violet); }
-    .section-heading > p { font: 10px/1.8 var(--mono); color: var(--muted); }
+    .section-heading h2 { display: flex; align-items: baseline; gap: 12px; font-size: 26px; font-weight: 600; letter-spacing: -.7px; line-height: 1.4; }
+    .section-index { font: 12px/1 var(--mono); letter-spacing: 0; color: var(--violet); }
+    .section-heading > p { font: 13px/1.8 var(--mono); color: var(--muted); }
     .research-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-    .research-project { position: relative; padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; transition: border-color .2s, transform .2s; }
-    .research-project::before { content: ""; position: absolute; left: 20px; top: -1px; width: 36px; height: 2px; background: #b39acb; }
+    .research-project { position: relative; padding: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; transition: border-color .2s, transform .2s; }
+    .research-project::before { content: ""; position: absolute; left: 22px; top: -1px; width: 36px; height: 2px; background: #b39acb; }
     .research-project:nth-child(3n + 2)::before { background: #caa5b3; }
     .research-project:nth-child(3n)::before { background: #9bb49b; }
     .research-project:hover { border-color: #bda9d0; transform: translateY(-2px); }
     .research-project:last-child { grid-column: 1 / -1; }
-    .repo-meta { display: flex; align-items: center; gap: 7px; color: var(--muted); font: 9px/1.8 var(--mono); margin-bottom: 12px; }
-    .repo-meta svg { width: 13px; height: 13px; color: var(--violet); flex-shrink: 0; }
-    .project-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 3px 10px; margin-bottom: 8px; }
-    .project-heading h3 { font-size: 15px; font-weight: 600; letter-spacing: -.3px; }
+    .repo-meta { display: flex; align-items: center; gap: 7px; color: var(--muted); font: 12px/1.8 var(--mono); margin-bottom: 12px; }
+    .repo-meta svg { width: 16px; height: 16px; color: var(--violet); flex-shrink: 0; }
+    .project-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 12px; margin-bottom: 8px; }
+    .project-heading h3 { font-size: 18px; font-weight: 600; letter-spacing: -.3px; }
     .project-heading h3 a { display: inline-flex; align-items: center; gap: 8px; }
-    .project-heading h3 span { font-size: 12px; color: var(--violet); font-weight: 400; }
-    .project-counts { font: 9px/1.8 var(--mono); color: var(--muted); white-space: nowrap; }
+    .project-heading h3 span { font-size: 14px; color: var(--violet); font-weight: 400; }
+    .project-counts { font: 12px/1.8 var(--mono); color: var(--muted); white-space: nowrap; }
     .project-counts strong { font-weight: 400; color: var(--sage); }
-    .research-project > p:not(.repo-meta) { font-size: 12px; color: var(--muted); line-height: 1.85; }
-    .research-project .project-status { display: inline-block; font: 9px/1.8 var(--mono) !important; color: #6f617c !important; background: #f3eef7; padding: 3px 7px; margin-top: 12px; border-radius: 3px; }
-    .section-note { font-size: 11px; color: var(--muted); line-height: 1.9; margin-top: 18px; }
+    .research-project > p:not(.repo-meta) { font-size: 16px; color: var(--muted); line-height: 1.85; }
+    .research-project .project-status { display: inline-block; font: 12px/1.8 var(--mono) !important; color: #594269 !important; background: #e7ddf0; padding: 3px 7px; margin-top: 12px; border-radius: 3px; }
+    .section-note { font-size: 14px; color: var(--muted); line-height: 1.9; margin-top: 18px; }
     .section-note a { color: var(--violet); }
     .lab-grid { display: grid; gap: 0; }
     .lab-item { display: grid; grid-template-columns: 195px minmax(0, 1fr); gap: 0 26px; align-items: baseline; padding: 18px 0; border-bottom: 1px dashed var(--line); }
     .lab-item:first-child { padding-top: 0; }
     .lab-item:last-child { border-bottom: 0; padding-bottom: 0; }
-    .lab-label { grid-column: 1; grid-row: 2; width: fit-content; font: 9px/1.7 var(--mono); color: var(--sage); margin-top: 7px; padding: 2px 7px; border: 1px solid #d9e3d6; background: var(--leaf); border-radius: 3px; }
-    .lab-item h3 { grid-column: 1; grid-row: 1; font-size: 14px; font-weight: 550; letter-spacing: -.2px; line-height: 1.6; }
+    .lab-label { grid-column: 1; grid-row: 2; width: fit-content; font: 12px/1.7 var(--mono); color: var(--sage); margin-top: 7px; padding: 2px 7px; border: 1px solid #bdcdb8; background: var(--leaf); border-radius: 3px; }
+    .lab-item h3 { grid-column: 1; grid-row: 1; font-size: 18px; font-weight: 550; letter-spacing: -.2px; line-height: 1.6; }
     .lab-item h3 a { display: inline-flex; align-items: center; gap: 7px; }
-    .lab-item h3 span { font-size: 12px; font-weight: 400; color: var(--violet); }
-    .lab-item > p:last-child { grid-column: 2; grid-row: 1 / 3; font-size: 12px; color: var(--muted); line-height: 1.9; }
-    .also-exploring { font-size: 12px; color: var(--muted); margin-top: 24px; }
+    .lab-item h3 span { font-size: 14px; font-weight: 400; color: var(--violet); }
+    .lab-item > p:last-child { grid-column: 2; grid-row: 1 / 3; font-size: 16px; color: var(--muted); line-height: 1.9; }
+    .also-exploring { font-size: 15px; color: var(--muted); margin-top: 24px; }
     .also-exploring a, .more-grid a { color: var(--violet); }
-    .more-research { margin-top: 18px; padding: 15px 18px; border: 1px solid var(--line); background: #f2eef533; border-radius: 6px; }
-    .more-research summary { font: 10px/1.8 var(--mono); color: var(--violet); cursor: pointer; width: fit-content; }
+    .more-research { margin-top: 18px; padding: 15px 18px; border: 1px solid var(--line); background: #e2dce866; border-radius: 6px; }
+    .more-research summary { font: 13px/1.8 var(--mono); color: var(--violet); cursor: pointer; width: fit-content; }
     .more-research[open] summary { margin-bottom: 20px; }
     .more-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 26px; }
-    .more-grid h3 { font-size: 12px; font-weight: 600; margin-bottom: 6px; }
-    .more-grid p { font-size: 12px; color: var(--muted); line-height: 2; }
+    .more-grid h3 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .more-grid p { font-size: 15px; color: var(--muted); line-height: 2; }
     .upstream { grid-column: 1 / -1; }
     .work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
     .work-project { padding: 23px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
-    .work-project:first-child { grid-column: 1 / -1; border-color: #ddd3e6; background: linear-gradient(120deg, #f1ebf6, #fbf8fc 75%); }
-    .work-project h3 { font-size: 18px; font-weight: 550; letter-spacing: -.5px; margin-bottom: 8px; }
-    .work-project > p { font-size: 12px; line-height: 1.9; color: var(--muted); }
-    .work-project .work-context { font: 9px/1.8 var(--mono); color: var(--violet); margin-bottom: 12px; }
-    .work-project .work-stack { font: 9px/1.9 var(--mono); color: var(--violet); margin-top: 13px; }
-    .text-link { display: inline-flex; align-items: center; gap: 9px; font: 10px/1.8 var(--mono); color: var(--violet); }
+    .work-project:first-child { grid-column: 1 / -1; border-color: #b9d2e5; background: linear-gradient(120deg, #dfeef9, #eef6fc 75%); }
+    .work-project h3 { font-size: 22px; font-weight: 550; letter-spacing: -.5px; margin-bottom: 8px; }
+    .work-project > p { font-size: 16px; line-height: 1.9; color: var(--muted); }
+    .work-project .work-context { font: 12px/1.8 var(--mono); color: var(--violet); margin-bottom: 12px; }
+    .work-project .work-stack { font: 12px/1.9 var(--mono); color: var(--violet); margin-top: 13px; }
+    .text-link { display: inline-flex; align-items: center; gap: 9px; font: 13px/1.8 var(--mono); color: var(--violet); }
     .work-project .text-link { margin-top: 14px; }
-    .work-project .work-result { font-size: 11px; line-height: 1.9; border-left: 2px solid #b99acb; padding-left: 13px; margin-top: 18px; }
+    .work-project .work-result { font-size: 14px; line-height: 1.9; border-left: 2px solid #b99acb; padding-left: 13px; margin-top: 18px; }
     .work-result strong { font-weight: 600; color: var(--ink); }
-    .work-small:nth-child(2) { background: #eef2eb80; border-color: #dce4d8; }
-    .work-small:nth-child(3) { background: #f8edf080; border-color: #eadce2; }
-    .work-small h3 { font-size: 16px; }
+    .work-small:nth-child(2) { background: #e1e9dd; border-color: #c3cfbd; }
+    .work-small:nth-child(3) { background: #efe0e6; border-color: #d5bcc8; }
+    .work-small h3 { font-size: 20px; }
     .experience-list { position: relative; display: grid; gap: 25px; }
     .experience-list::before { content: ""; position: absolute; left: 172px; top: 8px; bottom: 8px; width: 1px; background: var(--line); }
     .experience-item { position: relative; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 44px; }
     .experience-item::before { content: ""; position: absolute; left: 168px; top: 8px; width: 9px; height: 9px; background: var(--paper); border: 2px solid #baa7cb; border-radius: 50%; }
     .experience-item:first-child::before { background: var(--sage); border-color: var(--sage); box-shadow: 0 0 0 4px var(--leaf); }
-    .experience-date { font: 9px/1.9 var(--mono); color: var(--muted); padding-top: 2px; }
-    .experience-info h3 { font-size: 13px; font-weight: 600; line-height: 1.75; margin-bottom: 6px; }
-    .experience-info h3 span { display: block; color: var(--violet); font-weight: 400; font-size: 12px; }
-    .experience-info p { font-size: 12px; color: var(--muted); line-height: 1.85; }
+    .experience-date { font: 12px/1.9 var(--mono); color: var(--muted); padding-top: 2px; }
+    .experience-info h3 { font-size: 17px; font-weight: 600; line-height: 1.75; margin-bottom: 6px; }
+    .experience-info h3 span { display: block; color: var(--violet); font-weight: 700; font-size: 15px; }
+    .experience-info p { font-size: 16px; color: var(--muted); line-height: 1.85; }
     .education { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 44px; margin-top: 28px; padding-top: 23px; border-top: 1px dashed var(--line); }
-    .education > p { font: 9px/1.9 var(--mono); color: var(--muted); }
-    .education h3 { font-size: 12px; font-weight: 550; }
-    .education div p { font-size: 12px; color: var(--muted); margin-top: 3px; }
+    .education > p { font: 12px/1.9 var(--mono); color: var(--muted); }
+    .education h3 { font-size: 16px; font-weight: 550; }
+    .education div p { font-size: 15px; color: var(--muted); margin-top: 3px; }
     .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 30px; }
     .skills-grid > div { border-left: 2px solid #c3afd5; padding-left: 15px; }
     .skills-grid > div:nth-child(2n) { border-color: #a6bba4; }
-    .skills-grid h3 { font: 10px/1.8 var(--mono); color: var(--ink); margin-bottom: 7px; }
-    .skills-grid p { font-size: 12px; line-height: 1.9; color: var(--muted); }
-    .contact { position: relative; padding: 30px; margin-top: 34px; border: 1px solid #e5d8e1; border-radius: 10px; background: linear-gradient(110deg, var(--blush), #f2ebf6); overflow: hidden; }
+    .skills-grid h3 { font: 700 18px/1.5 var(--font); letter-spacing: -.2px; color: var(--ink); margin-bottom: 10px; }
+    .skills-grid p { font-size: 16px; line-height: 1.9; color: var(--body); }
+    .contact { position: relative; padding: 30px; margin-top: 34px; border: 1px solid #cfbac9; border-radius: 10px; background: linear-gradient(110deg, var(--blush), #e6daec); overflow: hidden; }
     .contact-inner { display: flex; align-items: center; justify-content: space-between; gap: 26px; position: relative; z-index: 1; }
-    .contact .eyebrow { font-size: 9px; color: var(--rose); margin-bottom: 11px; }
-    .contact h2 { font-size: 25px; font-weight: 550; letter-spacing: -.9px; margin-bottom: 9px; line-height: 1.4; }
-    .contact p:not(.eyebrow) { font-size: 12px; line-height: 1.85; color: #746171; max-width: 490px; }
-    .contact .button { display: inline-flex; flex-shrink: 0; align-items: center; gap: 18px; font-size: 12px; font-weight: 550; color: var(--plum); border: 1px solid #c9b7cd; background: #fff9fc; padding: 10px 16px; border-radius: 6px; }
+    .contact .eyebrow { font-size: 12px; color: var(--rose); margin-bottom: 11px; }
+    .contact h2 { font-size: 29px; font-weight: 550; letter-spacing: -.9px; margin-bottom: 9px; line-height: 1.4; }
+    .contact p:not(.eyebrow) { font-size: 16px; line-height: 1.85; color: var(--body); max-width: 490px; }
+    .contact .button { display: inline-flex; flex-shrink: 0; align-items: center; gap: 18px; font-size: 15px; font-weight: 550; color: var(--plum); border: 1px solid #c9b7cd; background: #fff9fc; padding: 10px 16px; border-radius: 6px; }
     .contact .button:hover { background: var(--plum); color: #fff; border-color: var(--plum); transform: translateY(-2px); }
-    .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 20px; font: 9px/1.8 var(--mono); color: var(--muted); padding: 24px 0 32px; }
+    .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 20px; font: 12px/1.8 var(--mono); color: var(--muted); padding: 24px 0 32px; }
     .footer-links { display: flex; flex-wrap: wrap; gap: 10px 17px; }
     @keyframes orbit { to { transform: rotate(360deg); } }
     @media (min-width: 1600px) { .page-layout { gap: 72px; } }
     @media (max-width: 1190px) {
+      .intro-status { display: none; }
       .page-layout { width: calc(100% - 56px); grid-template-columns: 218px minmax(0, 1fr); gap: 32px; }
       .profile-panel { padding-inline: 20px; }
       .profile-name { font-size: 27px; }
@@ -229,8 +247,7 @@
       .profile-role { font-size: 11px; margin-top: 11px; }
       .profile-location { font-size: 9px; margin-top: 6px; }
       .navigation { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; gap: 5px 6px; padding-top: 16px; margin-top: 18px; }
-      .navigation a { font-size: 10px; padding: 5px 7px; margin: 0; gap: 7px; }
-      .nav-index { font-size: 8px; }
+      .navigation a { font-size: 12px; padding: 7px 9px; margin: 0; gap: 7px; }
       .navigation a[aria-current="location"]::after { display: none; }
       .profile-links { grid-column: 2; grid-row: 2; margin: 2px 0 0; align-self: start; }
       .cv-button { font-size: 10px; padding: 8px 11px; gap: 16px; }
@@ -252,7 +269,7 @@
       .snapshot { font-size: 8px; }
       .intro { padding-bottom: 28px; }
       .section { padding-block: 30px; }
-      .section-heading h2 { font-size: 21px; }
+      .section-heading h2 { font-size: 24px; }
       .section-heading { margin-bottom: 21px; }
       .research-project { padding: 18px; }
       .research-project::before { left: 18px; }
@@ -267,33 +284,36 @@
       .signal-figure { display: none; }
     }
     @media (max-width: 580px) {
+      .intro-bar { flex-direction: column; align-items: stretch; gap: 12px; }
+      .intro-tools, .intro-actions { width: 100%; }
+      .top-link { flex: 1; justify-content: center; }
       h1 { font-size: clamp(35px, 8.5vw, 46px); max-width: 380px; }
       .eyebrow { max-width: 240px; font-size: 8px; }
       .intro-context { font-size: 14px; }
-      .intro-bar > span:last-child { font-size: 8px; }
+      .intro-status { display: none; }
       .research-list, .work-grid { grid-template-columns: 1fr; }
       .project-heading { flex-direction: row; }
       .research-project { padding: 19px; }
-      .repo-meta { font-size: 8px; }
-      .section-heading > p { font-size: 9px; }
+      .repo-meta { font-size: 11px; }
+      .section-heading > p { font-size: 12px; }
       .proof-item { padding-left: 12px; }
       .proof-item strong { font-size: 23px; }
       .proof-item span { font-size: 8px; }
       .snapshot { max-width: 330px; font-size: 8px; line-height: 1.9; }
       .lab-item { display: block; padding-block: 17px; }
-      .lab-item h3 { font-size: 14px; }
-      .lab-label { margin-top: 0; margin-bottom: 7px; font-size: 8px; }
+      .lab-item h3 { font-size: 18px; }
+      .lab-label { margin-top: 0; margin-bottom: 7px; font-size: 11px; }
       .lab-item > p:last-child { margin-top: 7px; }
       .work-project { padding: 21px; }
       .experience-item, .education { grid-template-columns: 1fr; gap: 5px; padding-left: 21px; }
       .experience-list::before { left: 4px; }
       .experience-item::before { left: 0; top: 6px; }
-      .experience-info h3 span { font-size: 11px; }
-      .experience-date { font-size: 9px; }
+      .experience-info h3 span { font-size: 14px; }
+      .experience-date { font-size: 12px; }
       .skills-grid, .more-grid { grid-template-columns: 1fr; gap: 21px; }
       .upstream { grid-column: auto; }
-      .contact h2 { font-size: 24px; }
-      .footer-inner { font-size: 8px; }
+      .contact h2 { font-size: 27px; }
+      .footer-inner { font-size: 12px; }
     }
     @media (max-width: 390px) {
       .page-layout { width: calc(100% - 28px); }
@@ -306,15 +326,17 @@
       .cv-button { font-size: 9px; padding: 7px 9px; gap: 10px; }
       .social-links { font-size: 8px; gap: 10px; }
       .navigation { gap: 4px; }
-      .navigation a { font-size: 9px; padding: 5px; gap: 5px; }
+      .navigation a { font-size: 12px; padding: 7px; gap: 5px; }
       .intro-bar { font-size: 8px; gap: 9px; }
-      .intro-bar > span:last-child { font-size: 7px; gap: 4px; }
       .project-heading { align-items: start; gap: 4px 8px; }
-      .project-heading h3 { font-size: 14px; }
-      .project-counts { font-size: 8px; }
+      .project-heading h3 { font-size: 17px; }
+      .project-counts { font-size: 11px; }
       .intro-proof { gap: 9px; }
       .proof-item strong { font-size: 21px; }
       .proof-item span { font-size: 7px; }
+    }
+    @media (max-width: 360px) {
+      .intro-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -353,12 +375,13 @@
 <p class="profile-location">New Delhi, India</p>
 </div>
 <nav aria-label="Main navigation" class="navigation">
-<a href="#about" aria-current="location"><span aria-hidden="true" class="nav-index">00</span>About</a>
-<a href="#research"><span aria-hidden="true" class="nav-index">01</span>Selected research</a>
-<a href="#lab"><span aria-hidden="true" class="nav-index">02</span>Current explorations</a>
-<a href="#work"><span aria-hidden="true" class="nav-index">03</span>Applied AI systems</a>
-<a href="#experience"><span aria-hidden="true" class="nav-index">04</span>Experience</a>
-<a href="#contact"><span aria-hidden="true" class="nav-index">06</span>Contact</a>
+<a href="#about" aria-current="location">About</a>
+<a href="#experience">Experience</a>
+<a href="#technical-skills">Technical Skills</a>
+<a href="#research">Selected research</a>
+<a href="#lab">Current explorations</a>
+<a href="#work">Applied AI systems</a>
+<a href="#contact">Contact</a>
 </nav>
 <div class="profile-links">
 <a class="cv-button" href="resume.html">Read full CV <span aria-hidden="true">↗</span></a>
@@ -367,7 +390,12 @@
 </div>
 <p class="profile-footnote">Working across<span>speech / language / systems</span></p>
 </aside><main class="main-column" id="main"><header class="intro" id="about">
-<div class="intro-bar"><span>~/rishikesh <span aria-hidden="true">/</span> portfolio</span><span><i aria-hidden="true"></i> Research meets engineering</span></div>
+<div class="intro-bar"><span>~/rishikesh <span aria-hidden="true">/</span> portfolio</span><div class="intro-tools"><span class="intro-status"><i aria-hidden="true"></i> Research meets engineering</span><nav aria-label="Profile links" class="intro-actions">
+<a aria-label="Rishikesh on GitHub (opens in a new tab)" class="top-link top-github" href="https://github.com/rishikksh20" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+<a aria-label="Rishikesh on X (opens in a new tab)" class="top-link top-x" href="https://x.com/ai_rishikesh" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.835L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>X</a>
+<a aria-label="Email Rishikesh" class="top-link" href="mailto:rishikksh20@gmail.com"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
+<a aria-label="Read Rishikesh's resume" class="top-link" href="resume.html"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>Resume</a>
+</nav></div></div>
 <div class="intro-stage">
 <div class="intro-copy">
 <p class="eyebrow">Ideas, implemented.</p>
@@ -391,14 +419,14 @@
 <ellipse cx="160" cy="160" rx="45" ry="101" fill="#d2dfca88" stroke="#96ad91" transform="rotate(90 160 160)"/>
 </g>
 <g stroke="#fffafc" stroke-width=".8" opacity=".9"><ellipse cx="160" cy="160" rx="27" ry="84" transform="rotate(-30 160 160)"/><ellipse cx="160" cy="160" rx="27" ry="84" transform="rotate(30 160 160)"/><ellipse cx="160" cy="160" rx="27" ry="84" transform="rotate(90 160 160)"/></g>
-<circle cx="160" cy="160" r="31" fill="#faf9f6" stroke="#a78bbd"/>
-<path d="M139 160H145L149 151L154 171L160 145L166 174L172 153L176 160H181" stroke="#73539b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="160" cy="160" r="31" fill="var(--paper)" stroke="#a78bbd"/>
+<path d="M139 160H145L149 151L154 171L160 145L166 174L172 153L176 160H181" stroke="var(--violet)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 <g class="signal-label" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1">
-<path d="M160 59V42H218" stroke="#b6a2c8"/><circle cx="160" cy="59" r="3" fill="#73539b"/><text x="222" y="45" fill="#73539b">VOICE</text>
-<path d="M72 211H37V239" stroke="#9fb09a"/><circle cx="72" cy="211" r="3" fill="#476c59"/><text x="20" y="255" fill="#476c59">MODELS</text>
-<path d="M247 211H282V239" stroke="#c09aab"/><circle cx="247" cy="211" r="3" fill="#a55772"/><text x="258" y="255" fill="#a55772">AGENTS</text>
+<path d="M160 59V42H218" stroke="#b6a2c8"/><circle cx="160" cy="59" r="3" fill="var(--violet)"/><text x="222" y="45" fill="var(--violet)">VOICE</text>
+<path d="M72 211H37V239" stroke="#9fb09a"/><circle cx="72" cy="211" r="3" fill="var(--sage)"/><text x="20" y="255" fill="var(--sage)">MODELS</text>
+<path d="M247 211H282V239" stroke="#c09aab"/><circle cx="247" cy="211" r="3" fill="var(--rose)"/><text x="258" y="255" fill="var(--rose)">AGENTS</text>
 </g>
-<g class="diagram-detail" font-family="ui-monospace, monospace" font-size="8" fill="#8b7d98"><text x="20" y="326">INPUT → RESEARCH → REAL WORLD</text><text x="273" y="326">[01]</text></g>
+<g class="diagram-detail" font-family="ui-monospace, monospace" font-size="8" fill="var(--muted)"><text x="20" y="326">INPUT → RESEARCH → REAL WORLD</text><text x="273" y="326">[01]</text></g>
 </svg>
 <figcaption>Different disciplines. Connected thinking.</figcaption>
 </figure>
@@ -412,8 +440,28 @@
 <p class="snapshot">Community counts across five research repositories · <time datetime="2026-10-18">18 October 2026</time></p>
 </header>
 
+<section aria-labelledby="experience-title" class="section experience-section" id="experience">
+<div class="section-heading"><h2 id="experience-title"><span aria-hidden="true" class="section-index">01</span>Experience</h2><a class="text-link" href="resume.html#professional-experience">Full experience in my CV <span aria-hidden="true">↗</span></a></div>
+<div class="experience-list">
+<article class="experience-item"><p class="experience-date">Jan 2019 — Present</p><div class="experience-info"><h3>Co-founder &amp; CTO <span>· Dubpro.ai / DeepSync Technologies</span></h3><p>Leading multilingual dubbing, neural TTS, voice cloning and generative audio. Built agentic RAG workflows with human review; my résumé reports approximately 2× faster dubbing.</p></div></article>
+<article class="experience-item"><p class="experience-date"><time datetime="2025-09">Sep 2025</time> — <time datetime="2026-02">Feb 2026</time></p><div class="experience-info"><h3>AI Consultant / Developer <span>· MyClone.is</span></h3><p>Real-time voice AI, persona-aware retrieval, memory and conversational infrastructure. Remote, San Francisco-based company.</p></div></article>
+<article class="experience-item"><p class="experience-date">Oct 2018 — Jan 2019</p><div class="experience-info"><h3>Data Science / Software Development Engineer <span>· Boutiqaat</span></h3><p>Multimodal product matching, recommendations and catalog classification.</p></div></article>
+<article class="experience-item"><p class="experience-date">Dec 2017 — Oct 2018</p><div class="experience-info"><h3>Data Scientist <span>· Humonics Global</span></h3><p>Speech synthesis, question-answer generation, face recognition and liveness detection.</p></div></article>
+<article class="experience-item"><p class="experience-date">Jun 2015 — Dec 2017</p><div class="experience-info"><h3>Software Engineer <span>· Nucleus Software</span></h3><p>Banking analytics, loan-default prediction and enterprise financial software.</p></div></article>
+</div>
+<div class="education"><p>Education · 2011–2015</p><div><h3>B.Tech, Electronics &amp; Instrumentation Engineering</h3><p>National Institute of Technology Silchar</p></div></div>
+</section>
+<section aria-labelledby="toolkit-title" class="section toolkit" id="technical-skills">
+<div class="section-heading"><h2 id="toolkit-title"><span aria-hidden="true" class="section-index">02</span>Technical Skills</h2></div>
+<div class="skills-grid">
+<div><h3>Models &amp; training</h3><p>PyTorch, Hugging Face, Transformers, SSMs, SFT, RLHF, RLVR, GRPO, distillation, diffusion and generative speech.</p></div>
+<div><h3>Inference &amp; performance</h3><p>Triton, CUDA, Flash Attention, vLLM, KV caching, quantization and GPU memory optimization.</p></div>
+<div><h3>Agents &amp; voice</h3><p>MCP, RAG, multi-agent orchestration, LlamaIndex, LangChain, LiveKit, Pipecat and Twilio.</p></div>
+<div><h3>Backend &amp; infrastructure</h3><p>Python, FastAPI, PostgreSQL, pgvector, Redis, Kafka, Docker, Serverless, AWS and GCP.</p></div>
+</div>
+</section>
 <section aria-labelledby="research-title" class="section research-section" id="research">
-<div class="section-heading"><h2 id="research-title"><span aria-hidden="true" class="section-index">01</span>Selected research</h2><p>Deep learning papers, implemented and explored.</p></div>
+<div class="section-heading"><h2 id="research-title"><span aria-hidden="true" class="section-index">03</span>Selected research</h2><p>Deep learning papers, implemented and explored.</p></div>
 <div class="research-list">
 <article class="research-project">
 <p class="repo-meta"><svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3.5 2.5h9v11h-9a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z"/><path d="M2.5 10.5h10M5 5h5M5 7h3"/></svg>Video understanding / PyTorch</p>
@@ -440,7 +488,7 @@
 </section>
 <section aria-labelledby="lab-title" class="section lab-section" id="lab">
 <div>
-<div class="section-heading"><h2 id="lab-title"><span aria-hidden="true" class="section-index">02</span>Currently exploring</h2><p>Efficient architectures, GPU kernels and agent training.</p></div>
+<div class="section-heading"><h2 id="lab-title"><span aria-hidden="true" class="section-index">04</span>Currently exploring</h2><p>Efficient architectures, GPU kernels and agent training.</p></div>
 <div class="lab-grid">
 <article class="lab-item"><p class="lab-label">State-space models</p><h3><a href="https://github.com/rishikksh20/mamba3-pytorch" rel="noopener noreferrer" target="_blank">Mamba-3 <span aria-hidden="true">↗</span></a></h3><p>Readable PyTorch reference with SISO/MIMO recurrence, trapezoidal discretization, rotary state updates and cached decoding.</p></article>
 <article class="lab-item"><p class="lab-label">Hybrid language models</p><h3><a href="https://github.com/rishikksh20/lfm25-pytorch" rel="noopener noreferrer" target="_blank">LFM2.5 2.6B <span aria-hidden="true">↗</span></a></h3><p>Convolution and attention blocks, official checkpoint loading, KV caching and optional Triton inference kernels.</p></article>
@@ -459,7 +507,7 @@
 </div>
 </section>
 <section aria-labelledby="work-title" class="section" id="work">
-<div class="section-heading"><h2 id="work-title"><span aria-hidden="true" class="section-index">03</span>Applied AI systems</h2><p>Taking models into real conversations and workflows.</p></div>
+<div class="section-heading"><h2 id="work-title"><span aria-hidden="true" class="section-index">05</span>Applied AI systems</h2><p>Taking models into real conversations and workflows.</p></div>
 <div class="work-grid"><article class="work-project">
 <p class="work-context">AI consultant · Completed six-month engagement</p>
 <h3>MyClone</h3>
@@ -468,26 +516,6 @@
 <a class="text-link" href="https://github.com/myclone-dev/myclone" rel="noopener noreferrer" target="_blank">View project <span aria-hidden="true">↗</span></a>
 <p class="work-result">Embedding migration from 1,536 to 512 dimensions supported approximately <strong>3× lower vector storage</strong> and <strong>15–20% lower voice-chat latency</strong>, as reported in my résumé.</p>
 </article><article class="work-project work-small"><h3>Nexus Code Agent</h3><p>An experimental coding-agent runtime with MCP, sub-agents, tools, persistent sessions, context compaction and sandboxed execution.</p><a class="text-link" href="https://github.com/rishikksh20/nexus-code-agent" rel="noopener noreferrer" target="_blank">View project <span aria-hidden="true">↗</span></a></article><article class="work-project work-small"><h3>Voice AI Agent</h3><p>A Pipecat-based demo connecting Twilio calls, browser WebRTC and text chat through a shared STT–LLM–TTS pipeline.</p><a class="text-link" href="https://github.com/rishikksh20/voice-ai-agent-basic" rel="noopener noreferrer" target="_blank">View project <span aria-hidden="true">↗</span></a></article></div>
-</section>
-<section aria-labelledby="experience-title" class="section experience-section" id="experience">
-<div class="section-heading"><h2 id="experience-title"><span aria-hidden="true" class="section-index">04</span>Experience</h2><a class="text-link" href="resume.html#professional-experience">Full experience in my CV <span aria-hidden="true">↗</span></a></div>
-<div class="experience-list">
-<article class="experience-item"><p class="experience-date">Jan 2019 — Present</p><div class="experience-info"><h3>Co-founder &amp; CTO <span>· Dubpro.ai / DeepSync Technologies</span></h3><p>Leading multilingual dubbing, neural TTS, voice cloning and generative audio. Built agentic RAG workflows with human review; my résumé reports approximately 2× faster dubbing.</p></div></article>
-<article class="experience-item"><p class="experience-date">Completed six-month engagement</p><div class="experience-info"><h3>AI Consultant / Developer <span>· MyClone.is</span></h3><p>Real-time voice AI, persona-aware retrieval, memory and conversational infrastructure. Remote, San Francisco-based company.</p></div></article>
-<article class="experience-item"><p class="experience-date">Oct 2018 — Jan 2019</p><div class="experience-info"><h3>Data Science / Software Development Engineer <span>· Boutiqaat</span></h3><p>Multimodal product matching, recommendations and catalog classification.</p></div></article>
-<article class="experience-item"><p class="experience-date">Dec 2017 — Oct 2018</p><div class="experience-info"><h3>Data Scientist <span>· Humonics Global</span></h3><p>Speech synthesis, question-answer generation, face recognition and liveness detection.</p></div></article>
-<article class="experience-item"><p class="experience-date">Jun 2015 — Dec 2017</p><div class="experience-info"><h3>Software Engineer <span>· Nucleus Software</span></h3><p>Banking analytics, loan-default prediction and enterprise financial software.</p></div></article>
-</div>
-<div class="education"><p>Education · 2011–2015</p><div><h3>B.Tech, Electronics &amp; Instrumentation Engineering</h3><p>National Institute of Technology Silchar</p></div></div>
-</section>
-<section aria-labelledby="toolkit-title" class="section toolkit">
-<div class="section-heading"><h2 id="toolkit-title"><span aria-hidden="true" class="section-index">05</span>Technical toolkit</h2></div>
-<div class="skills-grid">
-<div><h3>Models &amp; training</h3><p>PyTorch, Hugging Face, Transformers, SSMs, SFT, RLHF, RLVR, GRPO, distillation, diffusion and generative speech.</p></div>
-<div><h3>Inference &amp; performance</h3><p>Triton, CUDA, Flash Attention, vLLM, KV caching, quantization and GPU memory optimization.</p></div>
-<div><h3>Agents &amp; voice</h3><p>MCP, RAG, multi-agent orchestration, LlamaIndex, LangChain, LiveKit, Pipecat and Twilio.</p></div>
-<div><h3>Backend &amp; infrastructure</h3><p>Python, FastAPI, PostgreSQL, pgvector, Redis, Docker, AWS and GCP.</p></div>
-</div>
 </section>
 <section aria-labelledby="contact-title" class="contact" id="contact">
 <div class="contact-inner"><div><p class="eyebrow">06 / Start a conversation</p><h2 id="contact-title">Have something in mind?</h2><p>I'm interested in research collaborations and engineering challenges in voice AI, efficient models and intelligent agents.</p></div><a class="button" href="mailto:rishikksh20@gmail.com">Let's talk <span aria-hidden="true">↗</span></a></div>
