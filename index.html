@@ -76,7 +76,10 @@
     .profile-location::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--sidebar-green); box-shadow: 0 0 0 4px #a6e22e18; flex: 0 0 auto; }
     .navigation { display: flex; flex-direction: column; gap: 4px; margin-top: 29px; border-top: 1px solid var(--sidebar-line); padding-top: 22px; }
     .navigation a { display: flex; align-items: center; gap: 11px; font-size: 14px; font-weight: 700; color: var(--sidebar-ink); padding: 9px 10px; margin-inline: -10px; border: 1px solid transparent; border-radius: 6px; }
+    .nav-index { flex-shrink: 0; min-width: 2ch; font: 600 11px/1.2 var(--mono); color: var(--sidebar-muted); }
     .navigation a:hover { color: var(--sidebar-ink); background: #3e3d32; border-color: #75715e; }
+    .navigation a[aria-current="location"] { color: var(--sidebar-cyan); background: #3e3d32; border-color: #75715e; box-shadow: inset 3px 0 0 var(--sidebar-cyan); }
+    .navigation a[aria-current="location"] .nav-index { color: var(--sidebar-cyan); }
     .profile-panel a:focus-visible { outline-color: var(--sidebar-pink); }
     .profile-links { margin-top: 26px; }
     .cv-button { display: flex; justify-content: space-between; align-items: center; background: var(--sidebar-green); color: var(--sidebar-bg); border: 1px solid var(--sidebar-green); border-radius: 6px; padding: 10px 13px; font-size: 12px; font-weight: 600; }
@@ -250,6 +253,7 @@
       .profile-location { font-size: 9px; margin-top: 6px; }
       .navigation { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; gap: 5px 6px; padding-top: 16px; margin-top: 18px; }
       .navigation a { font-size: 12px; padding: 7px 9px; margin: 0; gap: 7px; }
+      .nav-index { font-size: 10px; }
       .profile-links { grid-column: 2; grid-row: 2; margin: 2px 0 0; align-self: start; }
       .cv-button { font-size: 10px; padding: 8px 11px; gap: 16px; }
       .social-links { display: flex; justify-content: space-between; font-size: 9px; gap: 10px; margin-top: 12px; }
@@ -384,14 +388,14 @@
 <p class="profile-location">New Delhi, India</p>
 </div>
 <nav aria-label="Main navigation" class="navigation">
-<a href="#about" aria-current="location">About</a>
-<a href="#experience">Experience</a>
-<a href="#education">Education</a>
-<a href="#technical-skills">Technical Skills</a>
-<a href="#research">Selected research</a>
-<a href="#lab">Current explorations</a>
-<a href="#work">Applied AI systems</a>
-<a href="#contact">Contact</a>
+<a href="#about" aria-current="location"><span aria-hidden="true" class="nav-index">00</span>About</a>
+<a href="#experience"><span aria-hidden="true" class="nav-index">01</span>Experience</a>
+<a href="#education"><span aria-hidden="true" class="nav-index">02</span>Education</a>
+<a href="#technical-skills"><span aria-hidden="true" class="nav-index">03</span>Technical Skills</a>
+<a href="#research"><span aria-hidden="true" class="nav-index">04</span>Selected research</a>
+<a href="#lab"><span aria-hidden="true" class="nav-index">05</span>Current explorations</a>
+<a href="#work"><span aria-hidden="true" class="nav-index">06</span>Applied AI systems</a>
+<a href="#contact"><span aria-hidden="true" class="nav-index">07</span>Contact</a>
 </nav>
 <div class="profile-links">
 <a class="cv-button" href="resume.html">Read full CV <span aria-hidden="true">↗</span></a>
@@ -546,6 +550,7 @@
     // Keep the sidebar in step with the section being read.
     const sectionLinks = Array.from(document.querySelectorAll('.navigation a'));
     const linkedSections = sectionLinks.map(link => document.querySelector(link.getAttribute('href')));
+    const profilePanel = document.querySelector('.profile-panel');
     let scrollQueued = false;
     function updateNavigation() {
       const readingLine = Math.min(180, window.innerHeight * 0.25);
@@ -560,6 +565,16 @@
         if (index === activeIndex) link.setAttribute('aria-current', 'location');
         else link.removeAttribute('aria-current');
       });
+      // Keep the current topic visible inside a scrollable desktop sidebar.
+      if (getComputedStyle(profilePanel).position === 'sticky') {
+        const panelBounds = profilePanel.getBoundingClientRect();
+        const linkBounds = sectionLinks[activeIndex].getBoundingClientRect();
+        if (linkBounds.top < panelBounds.top + 12) {
+          profilePanel.scrollTop -= panelBounds.top + 12 - linkBounds.top;
+        } else if (linkBounds.bottom > panelBounds.bottom - 12) {
+          profilePanel.scrollTop += linkBounds.bottom - panelBounds.bottom + 12;
+        }
+      }
       scrollQueued = false;
     }
     window.addEventListener('scroll', () => {
