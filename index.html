@@ -75,18 +75,18 @@
     .profile-location::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--sidebar-green); box-shadow: 0 0 0 4px #a6e22e18; flex: 0 0 auto; }
     .navigation { display: flex; flex-direction: column; gap: 4px; margin-top: 29px; border-top: 1px solid var(--sidebar-line); padding-top: 22px; }
     .navigation a { display: flex; align-items: center; gap: 11px; font-size: 14px; font-weight: 700; color: var(--sidebar-ink); padding: 9px 10px; margin-inline: -10px; border: 1px solid transparent; border-radius: 6px; }
-    .navigation a[aria-current="location"] { color: var(--sidebar-pink-light); background: #f926721a; border-color: #f9267266; }
     .navigation a:hover { color: var(--sidebar-ink); background: #3e3d32; border-color: #75715e; }
-    .navigation a[aria-current="location"]::after { content: "↗"; margin-left: auto; color: var(--sidebar-pink-light); font-size: 13px; }
     .profile-panel a:focus-visible { outline-color: var(--sidebar-pink); }
     .profile-links { margin-top: 26px; }
     .cv-button { display: flex; justify-content: space-between; align-items: center; background: var(--sidebar-green); color: var(--sidebar-bg); border: 1px solid var(--sidebar-green); border-radius: 6px; padding: 10px 13px; font-size: 12px; font-weight: 600; }
     .cv-button:hover { color: var(--sidebar-bg); background: #e6db74; border-color: #e6db74; transform: translateY(-2px); }
-    .social-links { display: flex; justify-content: space-between; gap: 12px; margin-top: 20px; font: 10px/1.8 var(--mono); color: var(--sidebar-cyan); }
+    .social-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-top: 18px; font: 600 12px/1.6 var(--font); color: var(--sidebar-cyan); }
+    .social-links a { display: flex; align-items: center; justify-content: center; gap: 4px; padding: 6px 0; white-space: nowrap; }
+    .social-links a + a { border-left: 1px solid var(--sidebar-line); }
     .profile-links a:not(.cv-button):hover { color: var(--sidebar-pink-light); }
-    .download-link { display: block; font-size: 10px; color: var(--sidebar-muted); margin-top: 15px; }
-    .profile-footnote { margin-top: 26px; padding-top: 17px; border-top: 1px solid var(--sidebar-line); font: 9px/1.9 var(--mono); color: var(--sidebar-muted); }
-    .profile-footnote span { display: block; color: var(--sidebar-ink); }
+    .download-link { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 12px; font-weight: 600; color: var(--sidebar-ink); margin-top: 10px; padding-top: 12px; border-top: 1px solid var(--sidebar-line); }
+    .profile-footnote { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--sidebar-line); font: 600 11px/1.7 var(--mono); color: var(--sidebar-muted); }
+    .profile-footnote span { display: block; margin-top: 6px; font: 600 12px/1.8 var(--font); color: var(--sidebar-ink); }
     .main-column { min-width: 0; padding-top: 31px; }
     .intro { position: relative; padding-bottom: 35px; border-bottom: 1px solid var(--line); }
     .intro-bar { display: flex; align-items: center; justify-content: space-between; gap: 18px; font: 10px/1.7 var(--mono); color: var(--muted); padding-bottom: 18px; border-bottom: 1px solid var(--line); }
@@ -248,10 +248,11 @@
       .profile-location { font-size: 9px; margin-top: 6px; }
       .navigation { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; gap: 5px 6px; padding-top: 16px; margin-top: 18px; }
       .navigation a { font-size: 12px; padding: 7px 9px; margin: 0; gap: 7px; }
-      .navigation a[aria-current="location"]::after { display: none; }
       .profile-links { grid-column: 2; grid-row: 2; margin: 2px 0 0; align-self: start; }
       .cv-button { font-size: 10px; padding: 8px 11px; gap: 16px; }
-      .social-links { font-size: 9px; gap: 13px; margin-top: 15px; }
+      .social-links { display: flex; justify-content: space-between; font-size: 9px; gap: 10px; margin-top: 12px; }
+      .social-links a { padding: 2px 0; }
+      .social-links a + a { border-left: 0; }
       .download-link, .profile-footnote { display: none; }
       .main-column { padding-top: 25px; }
       .intro-stage { grid-template-columns: minmax(0, 1fr) 180px; gap: 22px; padding-top: 30px; }
@@ -324,7 +325,7 @@
       .profile-role { font-size: 10px; max-width: 150px; }
       .profile-location { font-size: 8px; }
       .cv-button { font-size: 9px; padding: 7px 9px; gap: 10px; }
-      .social-links { font-size: 8px; gap: 10px; }
+      .social-links { font-size: 9px; gap: 10px; }
       .navigation { gap: 4px; }
       .navigation a { font-size: 12px; padding: 7px; gap: 5px; }
       .intro-bar { font-size: 8px; gap: 9px; }
@@ -336,6 +337,9 @@
       .proof-item span { font-size: 7px; }
     }
     @media (max-width: 360px) {
+      .profile-identity { grid-column: 1 / -1; }
+      .profile-links { grid-column: 1 / -1; grid-row: auto; display: grid; grid-template-columns: max-content minmax(0, 1fr); align-items: center; gap: 14px; margin-top: 16px; }
+      .social-links { font-size: 10px; margin-top: 0; }
       .intro-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -385,8 +389,8 @@
 </nav>
 <div class="profile-links">
 <a class="cv-button" href="resume.html">Read full CV <span aria-hidden="true">↗</span></a>
-<div class="social-links"><a href="https://github.com/rishikksh20" rel="noopener noreferrer" target="_blank">GitHub ↗</a><a href="https://twitter.com/ai_rishikesh" rel="noopener noreferrer" target="_blank">X ↗</a><a href="mailto:rishikksh20@gmail.com">Email ↗</a></div>
-<a class="download-link" download="" href="PROFILE.md">Download Markdown CV ↓</a>
+<div class="social-links"><a href="https://github.com/rishikksh20" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a><a href="https://twitter.com/ai_rishikesh" rel="noopener noreferrer" target="_blank">X <span aria-hidden="true">↗</span></a><a href="mailto:rishikksh20@gmail.com">Email <span aria-hidden="true">↗</span></a></div>
+<a class="download-link" download="" href="PROFILE.md">Download Markdown CV <span aria-hidden="true">↓</span></a>
 </div>
 <p class="profile-footnote">Working across<span>speech / language / systems</span></p>
 </aside><main class="main-column" id="main"><header class="intro" id="about">
@@ -443,7 +447,7 @@
 <section aria-labelledby="experience-title" class="section experience-section" id="experience">
 <div class="section-heading"><h2 id="experience-title"><span aria-hidden="true" class="section-index">01</span>Experience</h2><a class="text-link" href="resume.html#professional-experience">Full experience in my CV <span aria-hidden="true">↗</span></a></div>
 <div class="experience-list">
-<article class="experience-item"><p class="experience-date">Jan 2019 — Present</p><div class="experience-info"><h3>Co-founder &amp; CTO <span>· Dubpro.ai / DeepSync Technologies</span></h3><p>Leading multilingual dubbing, neural TTS, voice cloning and generative audio. Built agentic RAG workflows with human review; my résumé reports approximately 2× faster dubbing.</p></div></article>
+<article class="experience-item"><p class="experience-date">Jan 2019 — Present</p><div class="experience-info"><h3>Co-founder &amp; CTO <span>· Dubpro.ai / DeepSync Technologies</span></h3><p>Leading multilingual dubbing, neural TTS, voice cloning and generative audio. Built agentic RAG workflows with human review. Develop Agentic AI dubbing system which speed up the dubbing speed 2 times.</p></div></article>
 <article class="experience-item"><p class="experience-date"><time datetime="2025-09">Sep 2025</time> — <time datetime="2026-02">Feb 2026</time></p><div class="experience-info"><h3>AI Consultant / Developer <span>· MyClone.is</span></h3><p>Real-time voice AI, persona-aware retrieval, memory and conversational infrastructure. Remote, San Francisco-based company.</p></div></article>
 <article class="experience-item"><p class="experience-date">Oct 2018 — Jan 2019</p><div class="experience-info"><h3>Data Science / Software Development Engineer <span>· Boutiqaat</span></h3><p>Multimodal product matching, recommendations and catalog classification.</p></div></article>
 <article class="experience-item"><p class="experience-date">Dec 2017 — Oct 2018</p><div class="experience-info"><h3>Data Scientist <span>· Humonics Global</span></h3><p>Speech synthesis, question-answer generation, face recognition and liveness detection.</p></div></article>
