@@ -81,31 +81,30 @@
     .intro-bar > span:first-child { color: var(--violet); }
     .intro-bar > span:last-child { display: flex; align-items: center; gap: 7px; }
     .intro-bar i { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--sage); }
-    .intro-stage { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 32px; align-items: center; padding-top: 32px; }
+    .intro-stage { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 36px; align-items: start; padding-top: 38px; }
     .eyebrow { display: flex; align-items: center; gap: 9px; font: 10px/1.7 var(--mono); color: var(--violet); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 17px; }
     .eyebrow::before { content: ""; width: 23px; height: 1px; background: currentColor; }
     h1 { font-size: clamp(36px, 3.9vw, 55px); font-weight: 600; letter-spacing: -2.4px; line-height: 1.16; text-wrap: balance; }
     h1 .violet { color: var(--violet); }
     h1 .sage { color: var(--sage); }
     h1 .rose { color: var(--rose); }
-    .intro-bio { margin-top: 24px; padding: 24px 26px; border: 1px solid #ded4e7; border-left: 3px solid #a88bbf; border-radius: 8px; background: var(--surface); }
-    .intro-bio .eyebrow { font-size: 10px; margin-bottom: 16px; }
-    .bio-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; }
-    .intro-description { font-size: 18px; font-weight: 600; line-height: 1.8; color: var(--ink); }
-    .intro-context { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; font-size: 14px; font-weight: 600; line-height: 1.8; color: #40344f; margin-top: 20px; padding: 18px 22px; border: 1px solid #dcd0e7; border-radius: 8px; background: var(--lavender); }
-    .intro-context > span + span { border-left: 1px solid #d0bfdc; padding-left: 20px; }
-    .intro-context strong { font-weight: 750; }
-    .intro-context a { color: #563a75; font-weight: 750; text-decoration: underline; text-decoration-color: #aa8dbf; }
+    .intro-bio { margin-top: 24px; max-width: 70ch; }
+    .intro-description { font-size: 18px; font-weight: 400; line-height: 1.8; color: #403b48; }
+    .intro-description + .intro-description { margin-top: 16px; }
+    .intro-description strong { font-weight: 650; color: var(--ink); }
+    .intro-context { font-size: 14px; font-weight: 500; line-height: 1.9; color: #504757; margin-top: 27px; padding-top: 20px; border-top: 1px solid var(--line); }
+    .intro-context strong { font-weight: 650; color: var(--ink); }
+    .intro-context a { color: #563a75; font-weight: 650; text-decoration: underline; text-decoration-color: #baa9ce; }
     .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 25px; }
     .primary-link { display: inline-flex; align-items: center; gap: 16px; background: var(--plum); color: #fff; padding: 10px 16px; border: 1px solid var(--plum); border-radius: 6px; font-size: 12px; font-weight: 550; }
     .primary-link:hover { color: #fff; background: var(--violet); border-color: var(--violet); transform: translateY(-2px); }
     .hero-link { font: 10px/1.8 var(--mono); color: var(--muted); }
-    .signal-figure { position: relative; align-self: center; margin-top: -15px; }
+    .signal-figure { position: relative; align-self: start; margin-top: 78px; }
     .signal-figure::before { content: ""; position: absolute; inset: 20px -8px 30px; z-index: -1; border-radius: 50%; background: radial-gradient(ellipse, #ede5f48c, #f7e9ed45 45%, transparent 72%); }
     .signal-figure svg { width: 100%; height: auto; overflow: visible; }
     .signal-figure figcaption { font: 9px/1.8 var(--mono); text-align: center; color: var(--muted); margin-top: 5px; letter-spacing: .04em; }
     .orbit { transform-origin: 160px 160px; animation: orbit 90s linear infinite; }
-    .intro-proof { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 34px; padding: 22px 0 0; border-top: 1px solid var(--line); }
+    .intro-proof { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
     .proof-item { display: flex; flex-direction: column; align-items: start; gap: 1px; padding-left: 18px; border-left: 1px solid var(--line); }
     .proof-item:first-child { border: 0; padding: 0; }
     .proof-item strong { font: 500 25px/1.4 var(--mono); letter-spacing: -1px; color: var(--ink); }
@@ -200,9 +199,8 @@
       .page-layout { width: calc(100% - 56px); grid-template-columns: 218px minmax(0, 1fr); gap: 32px; }
       .profile-panel { padding-inline: 20px; }
       .profile-name { font-size: 27px; }
-      .intro-stage { grid-template-columns: minmax(0, 1fr) 220px; gap: 0; }
+      .intro-stage { grid-template-columns: minmax(0, 1fr) 190px; gap: 26px; }
       h1 { font-size: 40px; letter-spacing: -1.8px; }
-      .bio-columns { grid-template-columns: 1fr; gap: 16px; }
       .intro-description { font-size: 17px; }
       .section-heading > p { flex-basis: 100%; padding-left: 26px; }
       .project-heading { flex-direction: column; gap: 4px; }
@@ -239,17 +237,17 @@
       .social-links { font-size: 9px; gap: 13px; margin-top: 15px; }
       .download-link, .profile-footnote { display: none; }
       .main-column { padding-top: 25px; }
-      .intro-stage { grid-template-columns: minmax(0, 1fr) 230px; gap: 8px; padding-top: 30px; }
+      .intro-stage { grid-template-columns: minmax(0, 1fr) 180px; gap: 22px; padding-top: 30px; }
       .intro-bar { font-size: 9px; }
       .eyebrow { font-size: 9px; margin-bottom: 14px; }
       h1 { font-size: clamp(34px, 5.4vw, 42px); letter-spacing: -1.8px; }
-      .intro-bio { padding: 22px; margin-top: 22px; }
-      .intro-description { font-size: 16px; }
-      .intro-context { margin-top: 18px; }
+      .intro-bio { margin-top: 22px; }
+      .intro-description { font-size: 17px; }
+      .intro-context { margin-top: 24px; }
       .hero-actions { margin-top: 20px; gap: 12px 17px; }
       .primary-link { font-size: 11px; padding: 9px 12px; }
       .hero-link { font-size: 9px; }
-      .intro-proof { margin-top: 27px; padding-top: 19px; }
+      .intro-proof { margin-top: 22px; }
       .proof-item strong { font-size: 22px; }
       .snapshot { font-size: 8px; }
       .intro { padding-bottom: 28px; }
@@ -264,17 +262,14 @@
       .experience-item::before { left: 144px; }
       .contact { margin-top: 28px; padding: 25px; }
     }
+    @media (max-width: 700px) {
+      .intro-stage { display: block; }
+      .signal-figure { display: none; }
+    }
     @media (max-width: 580px) {
-      .intro-stage { grid-template-columns: 1fr; position: relative; }
-      .intro-copy { position: relative; z-index: 1; }
-      .signal-figure { position: absolute; top: 20px; right: 0; width: 165px; opacity: .28; pointer-events: none; }
-      .signal-figure::before { left: 0; right: 0; }
-      .signal-label, .signal-figure figcaption, .diagram-detail { display: none; }
       h1 { font-size: clamp(35px, 8.5vw, 46px); max-width: 380px; }
       .eyebrow { max-width: 240px; font-size: 8px; }
-      .intro-bio { padding: 20px; }
-      .intro-context { grid-template-columns: 1fr; gap: 0; padding: 16px 20px; }
-      .intro-context > span + span { border-left: 0; border-top: 1px solid #d0bfdc; padding: 12px 0 0; margin-top: 12px; }
+      .intro-context { font-size: 14px; }
       .intro-bar > span:last-child { font-size: 8px; }
       .research-list, .work-grid { grid-template-columns: 1fr; }
       .project-heading { flex-direction: row; }
@@ -330,7 +325,6 @@
       .page-layout { display: block; width: 100%; }
       .main-column { padding: 0; }
       .intro-stage { display: block; padding-top: 0; }
-      .intro-context, .intro-bio { background: #fff; }
       .intro-description { font-size: 11pt; }
       .intro { padding-bottom: 15px; }
       h1 { font-size: 24pt; }
@@ -378,6 +372,11 @@
 <div class="intro-copy">
 <p class="eyebrow">Ideas, implemented.</p>
 <h1><span class="violet">Voice AI.</span><br/><span class="sage">Efficient models.</span><br/><span class="rose">Intelligent agents.</span></h1>
+<div class="intro-bio">
+<p class="intro-description">I'm Rishikesh, an <strong>AI research engineer and technical founder</strong> working across model research and applied systems. I build multilingual speech synthesis, voice cloning and real-time conversational AI, alongside open-source implementations of language, audio and vision models.</p>
+<p class="intro-description">I enjoy taking a paper apart, implementing its ideas in <strong>PyTorch</strong>, and exploring how to train and run models efficiently. My current interests include state-space and hybrid language models, GPU kernels, and coding agents with retrieval, persistent memory and tool use.</p>
+</div>
+<div class="hero-actions"><a class="primary-link" href="#research">Explore the research <span aria-hidden="true">↓</span></a><a class="hero-link" href="https://github.com/rishikksh20" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a></div>
 </div>
 <figure class="signal-figure">
 <svg aria-hidden="true" viewBox="0 0 320 340" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -404,15 +403,7 @@
 <figcaption>Different disciplines. Connected thinking.</figcaption>
 </figure>
 </div>
-<p class="intro-context"><span><strong>Co-founder &amp; CTO</strong> at <a href="https://www.dubpro.ai/" rel="noopener noreferrer" target="_blank">Dubpro.ai</a>.</span><span>Previously consulting at <strong>MyClone.is</strong>.</span><span><strong>10+ years</strong> in software, including <strong>8+ years</strong> in AI.</span></p>
-<div class="intro-bio">
-<p class="eyebrow">About me</p>
-<div class="bio-columns">
-<p class="intro-description">I'm Rishikesh, an AI research engineer and technical founder working across model research and applied systems. I build multilingual speech synthesis, voice cloning and real-time conversational AI, alongside open-source implementations of language, audio and vision models.</p>
-<p class="intro-description">I enjoy taking a paper apart, implementing its ideas in PyTorch, and exploring how to train and run models efficiently. My current interests include state-space and hybrid language models, GPU kernels, and coding agents with retrieval, persistent memory and tool use.</p>
-</div>
-</div>
-<div class="hero-actions"><a class="primary-link" href="#research">Explore the research <span aria-hidden="true">↓</span></a><a class="hero-link" href="https://github.com/rishikksh20" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a></div>
+<p class="intro-context"><span><strong>Co-founder &amp; CTO</strong> at <a href="https://www.dubpro.ai/" rel="noopener noreferrer" target="_blank">Dubpro.ai</a>.</span> <span>Previously consulting at <strong>MyClone.is</strong>.</span> <span><strong>10+ years</strong> in software, including <strong>8+ years</strong> in AI.</span></p>
 <div class="intro-proof" aria-label="Research and experience at a glance">
 <p class="proof-item"><strong>1,977</strong><span>GitHub stars</span></p>
 <p class="proof-item"><strong>308</strong><span>Repository forks</span></p>
