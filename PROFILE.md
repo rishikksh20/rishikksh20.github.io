@@ -17,11 +17,11 @@ I implement research papers to understand their architecture and computational t
 ## Selected impact
 
 - **Open-source engagement:** ViViT, ResUNet, VocGAN, iSTFTNet, and FNet together received **1,977 stars and 308 forks** in the October 18, 2026 snapshot.
-- **Voice retrieval optimization:** At MyClone, migrated embeddings from **1,536 to 512 dimensions**, with résumé-reported improvements of approximately **3× lower vector storage**, **2–2.5× faster retrieval**, and **15–20% lower voice-chat latency**.
-- **AI dubbing workflows:** At Dubpro.ai, architected agentic RAG workflows with human review; the résumé reports approximately **2× faster dubbing**.
+- **Voice retrieval optimization:** At MyClone, migrated embeddings from **1,536 to 512 dimensions**, with improvements of approximately **3× lower vector storage**, **2–2.5× faster retrieval**, and **15–20% lower voice-chat latency**.
+- **AI dubbing workflows:** At Dubpro.ai, architected agentic RAG workflows with human review, achieving approximately **2× faster dubbing**.
 - **Research-to-system range:** Work spans neural vocoders, video transformers, segmentation, state-space models, real-time audio pipelines, persistent memory, and agent orchestration.
 
-*Engagement counts are a dated snapshot, not evidence of citations, production adoption, or benchmark superiority. Employment performance figures come from the supplied résumé; repository performance observations are identified separately below.*
+*Engagement counts are a dated snapshot, not evidence of citations, production adoption, or benchmark superiority. Repository performance observations are identified separately below.*
 
 ## Professional experience
 
@@ -43,9 +43,9 @@ I implement research papers to understand their architecture and computational t
 **January 2019–Present · Noida, India**
 
 - Co-founded and led development of AI dubbing, multilingual text-to-speech, voice cloning, speech transformation, and generative audio systems.
-- Architected agentic RAG dubbing workflows with **human-in-the-loop review**, increasing dubbing speed by approximately **2×**, as reported in the résumé.
+- Architected agentic RAG dubbing workflows with **human-in-the-loop review**, increasing dubbing speed by approximately **2×**.
+- Developed an in-house dubbing harness and tools, including an **LLM-as-judge quality verifier**, to automate dubbing and quality analysis, reduce reliance on human review, and save approximately **40% in time** and **25% in costs**.
 - Developed multilingual foundation-model capabilities and applied **RLHF-based post-training** for translation-specific quality and alignment.
-- Translated requirements from dubbing experts into scalable AI services, model workflows, and production engineering solutions.
 
 **Focus:** Multilingual speech · Neural TTS · Voice conversion · Translation · Agentic RAG · Human review · RLHF
 
@@ -287,6 +287,6 @@ Open to research collaborations and engineering problems involving voice AI, eff
 
 ## Sources & scope
 
-This profile combines the [supplied résumé](docs/Rishikesh_Resume.docx), [brief biography](ABOUTME.md), project repositories, and the user's GitHub review dated **October 18, 2026**. Exact calendar dates for the MyClone engagement were not provided. Employment metrics are résumé-reported; model performance observations are repository-reported. Paper authorship, publication records, independent benchmark validation, and production adoption are not inferred from implementations or engagement counts.
+This profile combines the [supplied résumé](docs/Rishikesh_Resume.docx), [brief biography](ABOUTME.md), project repositories, and the user's GitHub review dated **October 18, 2026**. Exact calendar dates for the MyClone engagement were not provided. Model performance observations are repository-reported. Paper authorship, publication records, independent benchmark validation, and production adoption are not inferred from implementations or engagement counts.
 
 See [portfolio source notes](docs/portfolio-sources.md) for the collection record and claim boundaries.
