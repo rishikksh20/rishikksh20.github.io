@@ -102,7 +102,6 @@
     .top-link { display: inline-flex; align-items: center; gap: 7px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); font: 600 12px/1.6 var(--font); white-space: nowrap; }
     .top-link svg { width: 16px; height: 16px; flex-shrink: 0; }
     .top-link:hover { color: var(--violet); background: var(--lavender); border-color: #b39acb; }
-    .top-resume, .top-resume:hover { color: #fff; background: var(--plum); border-color: var(--plum); }
     .intro-stage { display: grid; grid-template-columns: minmax(0, 1fr) 230px; gap: 36px; align-items: start; padding-top: 38px; }
     .eyebrow { display: flex; align-items: center; gap: 9px; font: 10px/1.7 var(--mono); color: var(--violet); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 17px; }
     .eyebrow::before { content: ""; width: 23px; height: 1px; background: currentColor; }
@@ -114,24 +113,16 @@
     .intro-description { font-size: 18px; font-weight: 400; line-height: 1.8; color: var(--body); }
     .intro-description + .intro-description { margin-top: 16px; }
     .intro-description strong { font-weight: 650; color: var(--ink); }
-    .intro-context { font-size: 14px; font-weight: 500; line-height: 1.9; color: var(--body); margin-top: 27px; padding-top: 20px; border-top: 1px solid var(--line); }
-    .intro-context strong { font-weight: 650; color: var(--ink); }
-    .intro-context a { color: var(--violet); font-weight: 650; text-decoration: underline; text-decoration-color: #a18ab7; }
     .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 25px; }
     .primary-link { display: inline-flex; align-items: center; gap: 16px; background: var(--plum); color: #fff; padding: 10px 16px; border: 1px solid var(--plum); border-radius: 6px; font-size: 12px; font-weight: 550; }
     .primary-link:hover { color: #fff; background: var(--violet); border-color: var(--violet); transform: translateY(-2px); }
-    .hero-link { font: 10px/1.8 var(--mono); color: var(--muted); }
+    .resume-link { gap: 7px; }
+    .resume-link svg { width: 16px; height: 16px; flex-shrink: 0; }
     .signal-figure { position: relative; align-self: start; margin-top: 78px; }
     .signal-figure::before { content: ""; position: absolute; inset: 20px -8px 30px; z-index: -1; border-radius: 50%; background: radial-gradient(ellipse, #ede5f48c, #f7e9ed45 45%, transparent 72%); }
     .signal-figure svg { width: 100%; height: auto; overflow: visible; }
     .signal-figure figcaption { font: 9px/1.8 var(--mono); text-align: center; color: var(--muted); margin-top: 5px; letter-spacing: .04em; }
     .orbit { transform-origin: 160px 160px; animation: orbit 90s linear infinite; }
-    .intro-proof { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
-    .proof-item { display: flex; flex-direction: column; align-items: start; gap: 1px; padding-left: 18px; border-left: 1px solid var(--line); }
-    .proof-item:first-child { border: 0; padding: 0; }
-    .proof-item strong { font: 500 25px/1.4 var(--mono); letter-spacing: -1px; color: var(--ink); }
-    .proof-item span { color: var(--muted); font: 9px/1.8 var(--mono); }
-    .snapshot { font: 9px/1.8 var(--mono); color: var(--muted); margin-top: 15px; }
     .section { padding: 38px 0; border-bottom: 1px solid var(--line); }
     .section-heading { margin-bottom: 23px; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 18px; }
     .section-heading h2 { display: flex; align-items: baseline; gap: 12px; font-size: 26px; font-weight: 600; letter-spacing: -.7px; line-height: 1.4; }
@@ -269,13 +260,8 @@
       h1 { font-size: clamp(34px, 5.4vw, 42px); letter-spacing: -1.8px; }
       .intro-bio { margin-top: 22px; }
       .intro-description { font-size: 17px; }
-      .intro-context { margin-top: 24px; }
       .hero-actions { margin-top: 20px; gap: 12px 17px; }
       .primary-link { font-size: 11px; padding: 9px 12px; }
-      .hero-link { font-size: 9px; }
-      .intro-proof { margin-top: 22px; }
-      .proof-item strong { font-size: 22px; }
-      .snapshot { font-size: 8px; }
       .intro { padding-bottom: 28px; }
       .section { padding-block: 30px; }
       .section-heading h2 { font-size: 24px; }
@@ -298,17 +284,12 @@
       .top-link { flex: 1; justify-content: center; }
       h1 { font-size: clamp(35px, 8.5vw, 46px); max-width: 380px; }
       .eyebrow { max-width: 240px; font-size: 8px; }
-      .intro-context { font-size: 14px; }
       .intro-status { display: none; }
       .research-list, .work-grid { grid-template-columns: 1fr; }
       .project-heading { flex-direction: row; }
       .research-project { padding: 19px; }
       .repo-meta { font-size: 11px; }
       .section-heading > p { font-size: 12px; }
-      .proof-item { padding-left: 12px; }
-      .proof-item strong { font-size: 23px; }
-      .proof-item span { font-size: 8px; }
-      .snapshot { max-width: 330px; font-size: 8px; line-height: 1.9; }
       .lab-item { display: block; padding-block: 17px; }
       .lab-item h3 { font-size: 18px; }
       .lab-label { margin-top: 0; margin-bottom: 7px; font-size: 11px; }
@@ -343,9 +324,6 @@
       .project-heading { align-items: start; gap: 4px 8px; }
       .project-heading h3 { font-size: 17px; }
       .project-counts { font-size: 11px; }
-      .intro-proof { gap: 9px; }
-      .proof-item strong { font-size: 21px; }
-      .proof-item span { font-size: 7px; }
     }
     @media (max-width: 360px) {
       .profile-identity { grid-column: 1 / -1; }
@@ -407,7 +385,6 @@
 <p class="profile-footnote">Working across<span>speech / language / systems</span></p>
 </aside><main class="main-column" id="main"><header class="intro" id="about">
 <div class="intro-bar"><span>~/rishikesh <span aria-hidden="true">/</span> portfolio</span><div class="intro-tools"><span class="intro-status"><i aria-hidden="true"></i> Research meets engineering</span><nav aria-label="Profile links" class="intro-actions">
-<a aria-label="Read Rishikesh's resume" class="top-link top-resume" href="docs/Rishikesh_Resume.pdf"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>Resume</a>
 <a aria-label="Rishikesh on GitHub (opens in a new tab)" class="top-link top-github" href="https://github.com/rishikksh20" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" focusable="false" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
 <a aria-label="Rishikesh on X (opens in a new tab)" class="top-link top-x" href="https://x.com/ai_rishikesh" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.47l8.6-9.835L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>X</a>
 <a aria-label="Email Rishikesh" class="top-link" href="mailto:rishikksh20@gmail.com"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
@@ -420,7 +397,7 @@
 <p class="intro-description">I'm Rishikesh, an <strong>AI research engineer and technical founder</strong> working across model research and applied systems. I build multilingual speech synthesis, voice cloning and real-time conversational AI, alongside open-source implementations of language, audio and vision models.</p>
 <p class="intro-description">I enjoy taking a paper apart, implementing its ideas in <strong>PyTorch</strong>, and exploring how to train and run models efficiently. My current interests include state-space and hybrid language models, GPU kernels, and coding agents with retrieval, persistent memory and tool use.</p>
 </div>
-<div class="hero-actions"><a class="primary-link" href="#research">Explore the research <span aria-hidden="true">↓</span></a><a class="hero-link" href="https://github.com/rishikksh20" rel="noopener noreferrer" target="_blank">GitHub <span aria-hidden="true">↗</span></a></div>
+<div class="hero-actions"><a class="primary-link" href="#research">Explore the research <span aria-hidden="true">↓</span></a><a aria-label="Read Rishikesh's resume" class="primary-link resume-link" href="docs/Rishikesh_Resume.pdf"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>Resume</a></div>
 </div>
 <figure class="signal-figure">
 <svg aria-hidden="true" viewBox="0 0 320 340" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -447,13 +424,6 @@
 <figcaption>Different disciplines. Connected thinking.</figcaption>
 </figure>
 </div>
-<p class="intro-context"><span><strong>Co-founder &amp; CTO</strong> at <a href="https://www.dubpro.ai/" rel="noopener noreferrer" target="_blank">Dubpro.ai</a>.</span> <span>Previously consulting at <strong>MyClone.is</strong>.</span> <span><strong>10+ years</strong> in software, including <strong>8+ years</strong> in AI.</span></p>
-<div class="intro-proof" aria-label="Research and experience at a glance">
-<p class="proof-item"><strong>1,977</strong><span>GitHub stars</span></p>
-<p class="proof-item"><strong>308</strong><span>Repository forks</span></p>
-<p class="proof-item"><strong>10+</strong><span>Years in software</span></p>
-</div>
-<p class="snapshot">Community counts across five research repositories · <time datetime="2026-10-18">18 October 2026</time></p>
 </header>
 
 <section aria-labelledby="experience-title" class="section experience-section" id="experience">
